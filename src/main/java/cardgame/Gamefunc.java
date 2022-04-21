@@ -81,7 +81,8 @@ public class Gamefunc {
 	void run(List<Card> deck) {
 		int i;
 		Card openCard = null;
-		int score1=0,score2=0;
+		int score1=0;
+		int score2=0;
 		openCard=deck.get(0);			//Declaring the topcard of the deck as openCard
 		deck.remove(0);		
 		
