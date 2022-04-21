@@ -110,12 +110,7 @@ public class Player2 implements PlayerStrategy{
 		return declaredSuit.getSuit();
 		
 	}
-	public void processOpponentActions(List<PlayerTurn> opponentActions) {
-		
-	}
-	 public void reset() {
-		 
-	 }
+	
 
 	 /**
 	 * The player2's score is calculated
