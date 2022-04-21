@@ -106,10 +106,10 @@ public class Player1 implements PlayerStrategy{
 		
 	}
 	public void processOpponentActions(List<PlayerTurn> opponentActions) {
-		;
+		
 	}
 	 public void reset() {
-		 ;
+		 
 	 }
 	 
 
