@@ -105,12 +105,7 @@ public class Player1 implements PlayerStrategy{
 		return declaredSuit.getSuit();
 		
 	}
-	public void processOpponentActions(List<PlayerTurn> opponentActions) {
-		
-	}
-	 public void reset() {
-		 
-	 }
+	
 	 
 
 	 /**
