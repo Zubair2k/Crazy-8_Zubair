@@ -111,12 +111,10 @@ public class Player2 implements PlayerStrategy{
 		
 	}
 	public void processOpponentActions(List<PlayerTurn> opponentActions) {
-		/**
-                 * Returns the score of each player
-                 */
+		;
 	}
 	 public void reset() {
-		 
+		 ;
 	 }
 
 	 /**
