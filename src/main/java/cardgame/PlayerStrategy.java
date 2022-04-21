@@ -81,8 +81,9 @@ public interface PlayerStrategy {
      * chose to do on each of their turns.
      *
      * @param opponentActions A list of what the opponents did on each of their turns
+     *void processOpponentActions(List<PlayerTurn> opponentActions);
      */
-    void processOpponentActions(List<PlayerTurn> opponentActions);
+    
 
     /**
      * Returns the score of each player
@@ -91,6 +92,7 @@ public interface PlayerStrategy {
 
     /**
      * Called before a game begins, to allow for resetting any state between games.
+     *void reset();
      */
-    void reset();
+    
 }
