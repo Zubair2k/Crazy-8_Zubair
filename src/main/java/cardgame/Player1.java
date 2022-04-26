@@ -52,7 +52,7 @@ public class Player1 implements PlayerStrategy{
 	
 	public void receiveCard(Card pickCard) {
 		System.out.println("Player1 received :"+pickCard.getRank()+" "+pickCard.getSuit());
-		myCards.add(pickCard);
+		myCards1.add(pickCard);
 	}
 	
 	public Card playCard() {
@@ -72,7 +72,7 @@ public class Player1 implements PlayerStrategy{
 				if(myCards1.get(i).getSuit().equals(changedSuit1)) {
 					System.out.println("Player1 played : "+myCards1.get(i).getRank()+" "+myCards1.get(i).getSuit());
 					discarded = myCards1.get(i);
-					myCards.remove(i);
+					myCards1.remove(i);
 					break;
 				}
 			}
@@ -92,7 +92,7 @@ public class Player1 implements PlayerStrategy{
 		for(int i=0;i<myCards1.size();i++) {
 			count1=0;
 			for(int j=0;j<myCards1.size();j++) {
-				if(myCards1.get(i)==myCards.get(j))
+				if(myCards1.get(i)==myCards1.get(j))
 					count1++;
 			}
 			if(count1>max1) {
