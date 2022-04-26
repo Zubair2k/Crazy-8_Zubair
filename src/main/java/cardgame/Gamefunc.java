@@ -142,7 +142,7 @@ public class Gamefunc {
 			 * Getting the score from the player class for each player
 			 */
 		
-			if(p1.myCards.size()==0 ||deck.size()==0) {
+			if(p1.myCards1.size()==0 ||deck.size()==0) {
 				score2=p2.getScore();
 				System.out.println("\n Player1 :"+score2);
 				System.out.println();
