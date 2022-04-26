@@ -3,14 +3,14 @@ package cardgame;
 import java.util.List;
 
 public class Player1 implements PlayerStrategy{
-	int playerId;
-	List<Integer> opponentIds;
-	List<Card> myCards;
-	Card topPileCard;
-	Card.Suit changedSuit;
+	int playerId1;
+	List<Integer> opponentIds1;
+	List<Card> myCards1;
+	Card topPileCard1;
+	Card.Suit changedSuit1;
 	public void init(int playerId, List<Integer> opponentIds) {
-		this.playerId=playerId;
-		this.opponentIds=opponentIds;
+		this.playerId1=playerId;
+		this.opponentIds1=opponentIds;
 	}
 
 	/**
@@ -18,7 +18,7 @@ public class Player1 implements PlayerStrategy{
 	 */
 
 	public void receiveInitialCards(List<Card> cards) {
-		this.myCards=cards;
+		this.myCards1=cards;
 	}
 
 	/**
@@ -26,18 +26,18 @@ public class Player1 implements PlayerStrategy{
 	 */
 
 	public boolean shouldDrawCard(Card topPileCard, Card.Suit changedSuit) {
-		this.topPileCard=topPileCard;
-		this.changedSuit=changedSuit;
-		if(changedSuit == null) {
-			for(int i=0;i<myCards.size();i++) {
-				if(myCards.get(i).getSuit().equals(topPileCard.getSuit())||myCards.get(i).getRank().equals(topPileCard.getRank())) {
+		this.topPileCard1=topPileCard;
+		this.changedSuit1=changedSuit;
+		if(changedSuit1 == null) {
+			for(int i=0;i<myCards1.size();i++) {
+				if(myCards1.get(i).getSuit().equals(topPileCard1.getSuit())||myCards1.get(i).getRank().equals(topPileCard1.getRank())) {
 					return false;
 				}
 			}
 		}
 		else {
-			for(int i=0;i<myCards.size();i++) {
-				if(myCards.get(i).getSuit().equals(changedSuit)) {
+			for(int i=0;i<myCards1.size();i++) {
+				if(myCards1.get(i).getSuit().equals(changedSuit)) {
 					return false;
 				}
 			}
@@ -57,21 +57,21 @@ public class Player1 implements PlayerStrategy{
 	
 	public Card playCard() {
 		Card discarded = null;
-		if(changedSuit == null) {
-			for(int i=0;i<myCards.size();i++) {
-				if(myCards.get(i).getSuit().equals(topPileCard.getSuit())||myCards.get(i).getRank().equals(topPileCard.getRank())) {
-					System.out.println("Player1 played : "+myCards.get(i).getRank()+" "+myCards.get(i).getSuit());
-					discarded = myCards.get(i);
+		if(changedSuit1 == null) {
+			for(int i=0;i<myCards1.size();i++) {
+				if(myCards1.get(i).getSuit().equals(topPileCard1.getSuit())||myCards1.get(i).getRank().equals(topPileCard1.getRank())) {
+					System.out.println("Player1 played : "+myCards1.get(i).getRank()+" "+myCards1.get(i).getSuit());
+					discarded = myCards1.get(i);
 					myCards1.remove(i);
 					break;
 				}
 			}
 		}
 		else {
-			for(int i=0;i<myCards.size();i++) {
-				if(myCards.get(i).getSuit().equals(changedSuit1)) {
-					System.out.println("Player1 played : "+myCards.get(i).getRank()+" "+myCards.get(i).getSuit());
-					discarded = myCards.get(i);
+			for(int i=0;i<myCards1.size();i++) {
+				if(myCards1.get(i).getSuit().equals(changedSuit1)) {
+					System.out.println("Player1 played : "+myCards1.get(i).getRank()+" "+myCards1.get(i).getSuit());
+					discarded = myCards1.get(i);
 					myCards.remove(i);
 					break;
 				}
@@ -87,17 +87,17 @@ public class Player1 implements PlayerStrategy{
 	
 	public Card.Suit declareSuit(){
 		Card declaredSuit=myCards1.get(0);
-		int max=0;
-		int count=0;
+		int max1=0;
+		int count1=0;
 		for(int i=0;i<myCards1.size();i++) {
-			count=0;
+			count1=0;
 			for(int j=0;j<myCards1.size();j++) {
-				if(myCards.get(i)==myCards.get(j))
-					count++;
+				if(myCards1.get(i)==myCards.get(j))
+					count1++;
 			}
-			if(count>max) {
-				max=count;
-				declaredSuit=myCards.get(i);
+			if(count1>max1) {
+				max1=count1;
+				declaredSuit=myCards1.get(i);
 			}
 		}
 		System.out.println("\n Suit Declared : "+declaredSuit.getSuit());
@@ -114,11 +114,11 @@ public class Player1 implements PlayerStrategy{
 		
 	@Override
 	public int getScore() {
-		int score=0;
-		for(int i=0;i<myCards.size();i++) {
-			if(score<=200)
-				score+=myCards.get(i).getPointValue();
+		int score1=0;
+		for(int i=0;i<myCards1.size();i++) {
+			if(score1<=200)
+				score1+=myCards1.get(i).getPointValue();
 		}
-		return score;
+		return score1;
 	}
 }
