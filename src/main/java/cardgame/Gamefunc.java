@@ -109,7 +109,7 @@ public class Gamefunc {
 				}
 				else{
 					openCard=p1.playCard();
-					if(openCard.getRank() == Rank.EIGHT && p1.myCards.size() != 0) 
+					if(openCard.getRank() == Rank.EIGHT && p1.myCards1.size() != 0) 
 					{
 						decCard=p1.declareSuit();
 					}
